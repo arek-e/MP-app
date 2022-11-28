@@ -9,17 +9,38 @@ datasource db {
   provider = "postgresql"
   url      = "postgresql://postgres:msuAevklNiG79NEsGGG1@containers-us-west-114.railway.app:5935/railway"
 }
-model Post {
-    id Int  @id @default(autoincrement())
-    title String
-    content String?
-    published Boolean @default(false)
-    author User? @relation(fields: [authorId], references: [id])
-    authorId Int?
-}
+
 model User{
     id Int  @id @default(autoincrement())
     email String @unique
-    name String?
-    posts Post[]
+    firstname String
+    lastname String
+    password String
+    phonenumber Int
+    trashBins Trashbin[]
 }
+model Trashbin{
+    id Int @id @default(autoincrement())
+    status String
+    author User @relation(fields: [authorId], references: [id])
+    authorId Int
+    wastetypes WastetypesOnTrashBins[]
+    latitude String
+    longitude String
+}
+model Wastetype{
+    id Int @id @default(autoincrement())
+    wastetype String
+    trashbins WastetypesOnTrashBins[]
+
+}
+model WastetypesOnTrashBins{
+    trashbin Trashbin @relation(fields: [trashbinId], references: [id])
+    trashbinId Int
+    wastetype Wastetype @relation(fields:[wastetypeId], references: [id])
+    wastetypeId Int
+    assignedAt DateTime @default(now())
+
+    @@id([trashbinId, wastetypeId])
+}
+
