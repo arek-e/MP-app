@@ -18,7 +18,13 @@
     },
     "name": "Valencia Cyclery",
     "rating": 4.2,
-    "vicinity": "1077 Valencia Street, San Francisco"
+    "vicinity": "1077 Valencia Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -39,7 +45,13 @@
     },
     "name": "San Francisco Bicycle Rentals",
     "rating": 4.5,
-    "vicinity": "425 Jefferson Street, San Francisco"
+    "vicinity": "425 Jefferson Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -60,7 +72,13 @@
     },
     "name": "Mike's Bikes of San Francisco",
     "rating": 4,
-    "vicinity": "1233 Howard Street, San Francisco"
+    "vicinity": "1233 Howard Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -81,7 +99,13 @@
     },
     "name": "Blazing Saddles Bike Rentals & Tours",
     "rating": 4.1,
-    "vicinity": "2715 Hyde Street, San Francisco"
+    "vicinity": "2715 Hyde Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -102,7 +126,13 @@
     },
     "name": "Huckleberry Bicycles",
     "rating": 4.7,
-    "vicinity": "Huckleberry Bicycles, 1073 Market Street, San Francisco"
+    "vicinity": "Huckleberry Bicycles, 1073 Market Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -123,7 +153,13 @@
     },
     "name": "American Cyclery",
     "rating": 4.5,
-    "vicinity": "510 Frederick Street, San Francisco"
+    "vicinity": "510 Frederick Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -144,7 +180,13 @@
     },
     "name": "The New Wheel Electric Bikes",
     "rating": 4.8,
-    "vicinity": "420 Cortland Avenue, San Francisco"
+    "vicinity": "420 Cortland Avenue, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -165,7 +207,13 @@
     },
     "name": "Box Dog Bikes",
     "rating": 4.4,
-    "vicinity": "494 14th Street, San Francisco"
+    "vicinity": "494 14th Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -186,7 +234,13 @@
     },
     "name": "The Bike Kitchen",
     "rating": 4.8,
-    "vicinity": "650H Florida Street, San Francisco"
+    "vicinity": "650H Florida Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -207,7 +261,13 @@
     },
     "name": "Nomad Cyclery",
     "rating": 4.2,
-    "vicinity": "2555 Irving Street, San Francisco"
+    "vicinity": "2555 Irving Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -228,7 +288,13 @@
     },
     "name": "Avenue Cyclery",
     "rating": 4.8,
-    "vicinity": "756 Stanyan Street, San Francisco"
+    "vicinity": "756 Stanyan Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -249,7 +315,13 @@
     },
     "name": "Bike Connection",
     "rating": 4.7,
-    "vicinity": "1090 Folsom Street, San Francisco"
+    "vicinity": "1090 Folsom Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -270,7 +342,13 @@
     },
     "name": "Big Swingin' Cycles",
     "rating": 4.7,
-    "vicinity": "2260 Van Ness Avenue, San Francisco"
+    "vicinity": "2260 Van Ness Avenue, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -291,7 +369,13 @@
     },
     "name": "Ocean Cyclery",
     "rating": 4.2,
-    "vicinity": "1935 Ocean Avenue, San Francisco"
+    "vicinity": "1935 Ocean Avenue, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -312,7 +396,13 @@
     },
     "name": "New Holiday Adventure Sale",
     "rating": 4.7,
-    "vicinity": "1937 Lombard Street, San Francisco"
+    "vicinity": "1937 Lombard Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -333,7 +423,13 @@
     },
     "name": "Columbus Cyclery Go Bike It",
     "rating": 4.3,
-    "vicinity": "2011 Mason Street, San Francisco"
+    "vicinity": "2011 Mason Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -354,7 +450,13 @@
     },
     "name": "3D Bike Fit",
     "rating": 4.8,
-    "vicinity": "1299 Bush Street suite c, San Francisco"
+    "vicinity": "1299 Bush Street suite c, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -375,7 +477,13 @@
     },
     "name": "Market Street Cycles",
     "rating": 4.7,
-    "vicinity": "1592 Market Street, San Francisco"
+    "vicinity": "1592 Market Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -396,7 +504,13 @@
     },
     "name": "Freewheel Bike Shop",
     "rating": 4.4,
-    "vicinity": "1920 Hayes Street #1126, San Francisco"
+    "vicinity": "1920 Hayes Street #1126, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -417,7 +531,13 @@
     },
     "name": "Bespoke Cycles",
     "rating": 4.1,
-    "vicinity": "2843 Clay Street, San Francisco"
+    "vicinity": "2843 Clay Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -438,7 +558,13 @@
     },
     "name": "The Bike Hut",
     "rating": 4.8,
-    "vicinity": "40 Pier Suite #15, San Francisco"
+    "vicinity": "40 Pier Suite #15, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -480,7 +606,13 @@
     },
     "name": "Bay City Bike Rentals and Tours",
     "rating": 2.8,
-    "vicinity": "622 Shrader Street, San Francisco"
+    "vicinity": "622 Shrader Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -501,7 +633,13 @@
     },
     "name": "Swell Bicycles",
     "rating": 4.7,
-    "vicinity": "4002 Irving Street, San Francisco"
+    "vicinity": "4002 Irving Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -522,7 +660,13 @@
     },
     "name": "Spoke Easy SF",
     "rating": 4.8,
-    "vicinity": "1901 Clement Street, San Francisco"
+    "vicinity": "1901 Clement Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -543,7 +687,13 @@
     },
     "name": "Roaring Mouse Cycles",
     "rating": 4.8,
-    "vicinity": "934 Mason Street, San Francisco"
+    "vicinity": "934 Mason Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -564,7 +714,13 @@
     },
     "name": "Trek Bicycle San Francisco Cow Hollow",
     "rating": 4.9,
-    "vicinity": "3001 Steiner Street, San Francisco"
+    "vicinity": "3001 Steiner Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -1021,6 +1177,12 @@
     },
     "name": "NTP",
     "rating": 5,
-    "vicinity": "1699 Hawes Street, San Francisco"
+    "vicinity": "1699 Hawes Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   }
 ]
