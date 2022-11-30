@@ -3,7 +3,7 @@ package com.example.frontend.place
 import android.content.Context
 import android.graphics.Color
 import androidx.core.content.ContextCompat
-import com.example.frontend.BitmapHelper
+//import com.example.frontend.BitmapHelper
 import com.example.frontend.R
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.BitmapDescriptor
@@ -30,23 +30,23 @@ class PlaceRenderer(private val context: Context, map: GoogleMap, clusterManager
     /**
      * The icon to use for each cluster item
      */
-    private val trashIcon: BitmapDescriptor by lazy {
-        val color = ContextCompat.getColor(context,
-            R.color.primary
-        )
-        BitmapHelper.vectorToBitmap(
-            context,
-            R.drawable.ic_baseline_restore_from_trash_24,
-            color
-        )
-    }
+//    private val trashIcon: BitmapDescriptor by lazy {
+//        val color = ContextCompat.getColor(context,
+//            R.color.primary
+//        )
+//        BitmapHelper.vectorToBitmap(
+//            context,
+//            R.drawable.ic_baseline_restore_from_trash_24,
+//            color
+//        )
+//    }
 
 
     override fun onBeforeClusterItemRendered(item: Place, markerOptions: MarkerOptions) {
         item.let {
             markerOptions.title(item.name)
                 .position(it.latLng)
-                .icon(trashIcon)
+//                .icon(trashIcon)
         }
     }
 
