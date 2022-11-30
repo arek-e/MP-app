@@ -26,6 +26,7 @@ class PlaceRenderer(private val context: Context, map: GoogleMap, clusterManager
         )
     }
 
+
     /**
      * The icon to use for each cluster item
      */

@@ -585,7 +585,13 @@
     },
     "name": "Warm Planet Bikes",
     "rating": 4.6,
-    "vicinity": "1098A Market Street, San Francisco"
+    "vicinity": "1098A Market Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -741,7 +747,13 @@
     },
     "name": "San Francisco Yellow Bike Project",
     "rating": 4.9,
-    "vicinity": "530 Ellis Street, San Francisco"
+    "vicinity": "530 Ellis Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -761,7 +773,13 @@
       }
     },
     "name": "Moox, Inc",
-    "vicinity": "550 15th Street M15, San Francisco"
+    "vicinity": "550 15th Street M15, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -782,7 +800,13 @@
     },
     "name": "Golden Gate Rides Bike Rentals & Tours",
     "rating": 4.8,
-    "vicinity": "609 O'Farrell Street, San Francisco"
+    "vicinity": "609 O'Farrell Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -803,7 +827,13 @@
     },
     "name": "P-Fits/Fitted By Pedro",
     "rating": 5,
-    "vicinity": "1601 North Point Street, San Francisco"
+    "vicinity": "1601 North Point Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -823,7 +853,13 @@
       }
     },
     "name": "aluguel de Bikes",
-    "vicinity": "2662 Taylor Street, San Francisco"
+    "vicinity": "2662 Taylor Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -844,7 +880,13 @@
     },
     "name": "Velocipede Cyclery",
     "rating": 4.8,
-    "vicinity": "2405 3rd Street, San Francisco"
+    "vicinity": "2405 3rd Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -865,7 +907,13 @@
     },
     "name": "Mash Transit",
     "rating": 4.9,
-    "vicinity": "284 Sanchez Street, San Francisco"
+    "vicinity": "284 Sanchez Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -886,7 +934,13 @@
     },
     "name": "San Francyclo",
     "rating": 4.4,
-    "vicinity": "746 Arguello Boulevard, San Francisco"
+    "vicinity": "746 Arguello Boulevard, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -907,7 +961,13 @@
     },
     "name": "Everybody Bikes",
     "rating": 4.2,
-    "vicinity": "1352 Irving Street, San Francisco"
+    "vicinity": "1352 Irving Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -928,7 +988,13 @@
     },
     "name": "High Trails Cyclery & Mountain Bike Adventure Tours",
     "rating": 4.8,
-    "vicinity": "1825 Polk Street, San Francisco"
+    "vicinity": "1825 Polk Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -949,7 +1015,13 @@
     },
     "name": "ONYX Motorbikes",
     "rating": 4.1,
-    "vicinity": "455 Irwin Street #104, San Francisco"
+    "vicinity": "455 Irwin Street #104, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -970,7 +1042,13 @@
     },
     "name": "DICK'S Sporting Goods",
     "rating": 3.7,
-    "vicinity": "64 Serramonte Center, Daly City"
+    "vicinity": "64 Serramonte Center, Daly City",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -991,7 +1069,13 @@
     },
     "name": "Bike & View San Francisco Bike Rentals & Tours",
     "rating": 4,
-    "vicinity": "1772 Lombard Street, San Francisco"
+    "vicinity": "1772 Lombard Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -1012,7 +1096,13 @@
     },
     "name": "DD Cycles",
     "rating": 4.8,
-    "vicinity": "4049 Balboa Street, San Francisco"
+    "vicinity": "4049 Balboa Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -1033,7 +1123,13 @@
     },
     "name": "Elevation Bike Co.",
     "rating": 4.9,
-    "vicinity": "2648 Judah Street, San Francisco"
+    "vicinity": "2648 Judah Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -1054,7 +1150,13 @@
     },
     "name": "Pedal Revolution",
     "rating": 4.3,
-    "vicinity": "3085 21st Street, San Francisco"
+    "vicinity": "3085 21st Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -1075,7 +1177,13 @@
     },
     "name": "Baygame",
     "rating": 5,
-    "vicinity": "665 Eddy Street a, San Francisco"
+    "vicinity": "665 Eddy Street a, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -1095,7 +1203,13 @@
       }
     },
     "name": "Scarab Cycles",
-    "vicinity": "1999 Bryant Street, San Francisco"
+    "vicinity": "1999 Bryant Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -1116,7 +1230,13 @@
     },
     "name": "Golden Gate Bridge Bike Rentals",
     "rating": 4.6,
-    "vicinity": "2157 Lombard Street, San Francisco"
+    "vicinity": "2157 Lombard Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -1136,7 +1256,13 @@
       }
     },
     "name": "Fiets ophalen",
-    "vicinity": "501 Bay Street, San Francisco"
+    "vicinity": "501 Bay Street, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {
@@ -1156,7 +1282,13 @@
       }
     },
     "name": "Gling Urban Bikes",
-    "vicinity": "500 Terry A Francois Boulevard, San Francisco"
+    "vicinity": "500 Terry A Francois Boulevard, San Francisco",
+    "wastetypes": {
+      "organic": true,
+      "metal": false,
+      "glass": false,
+      "liquid": true
+    }
   },
   {
     "geometry": {

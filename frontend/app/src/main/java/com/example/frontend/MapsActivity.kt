@@ -1,7 +1,9 @@
 package com.example.frontend
 
+import android.location.Location
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.frontend.databinding.ActivityMapsBinding
@@ -10,6 +12,8 @@ import com.example.frontend.place.PlaceRenderer
 import com.example.frontend.place.PlacesReader
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener
+import com.google.android.gms.maps.GoogleMap.OnMyLocationClickListener
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptor
@@ -20,15 +24,20 @@ import com.google.maps.android.ktx.awaitMap
 import com.google.maps.android.ktx.awaitMapLoad
 
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(),
+    OnMapReadyCallback
+    //OnMyLocationButtonClickListener,
+    //OnMyLocationClickListener,
+    //OnRequestPermissionsResultCallback
+{
 
     private lateinit var mMap: GoogleMap
     private val binding by lazy { ActivityMapsBinding.inflate(layoutInflater) }
+    private var permissionDenied = false
 
     private val places: List<Place> by lazy {
         PlacesReader(this).read()
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -118,5 +127,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
+    /*
+    override fun onMyLocationButtonClick(): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun onMyLocationClick(p0: Location) {
+        TODO("Not yet implemented")
+    }
+    */
 
 }

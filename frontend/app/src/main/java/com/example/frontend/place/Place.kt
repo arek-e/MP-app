@@ -10,6 +10,7 @@ data class Place(
     val address: String,
     val rating: Float,
     val wastetypes: Wastetypes
+
 ) : ClusterItem {
     override fun getPosition(): LatLng {
         return latLng
