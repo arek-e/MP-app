@@ -1,23 +1,54 @@
 package com.example.frontend
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.frontend.databinding.ActivityMapsBinding
+import com.example.frontend.place.Place
+import com.example.frontend.place.PlacesReader
+import com.example.frontend.place.Wastetypes
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.example.frontend.databinding.ActivityMapsBinding
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
 
+    private val places: List<Place> by lazy {
+        PlacesReader(this).read()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+
+        println(places)
+
+        // getting the recyclerview by its id
+        val recyclerview = findViewById<RecyclerView>(R.id.recycler_view)
+
+        // ArrayList of class ItemsViewModel
+        val data = ArrayList<Place>()
+
+        // This loop will create the Views
+        for (place in places) {
+            data.add(Place(place.name, place.latLng, place.address, place.rating, place.wastetypes))
+        }
+
+        // This will pass the ArrayList to our Adapter
+        val adapter = CardAdapter(data)
+
+        // Setting the Adapter with the recyclerview
+        recyclerview.adapter = adapter
+
+        // this creates a vertical layout Manager
+        recyclerview.layoutManager = LinearLayoutManager(this)
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
