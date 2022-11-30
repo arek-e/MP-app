@@ -49,7 +49,6 @@ class MapsActivity : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         lifecycleScope.launchWhenCreated {
