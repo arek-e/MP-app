@@ -31,4 +31,5 @@ data class Wastetypes(
     val metal: Boolean,
     val glass: Boolean,
     val liquid: Boolean
+
 )
