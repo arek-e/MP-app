@@ -43,6 +43,16 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.maps.android:android-maps-utils:1.1.0'
+    implementation 'com.google.code.gson:gson:2.10'
+    // Maps SDK for Android KTX Library
+    implementation 'com.google.maps.android:maps-ktx:3.0.0'
+    // Maps SDK for Android Utility Library KTX Library
+    implementation 'com.google.maps.android:maps-utils-ktx:3.0.0'
+    // Lifecycle Runtime KTX Library
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
