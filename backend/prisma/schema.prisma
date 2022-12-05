@@ -32,8 +32,8 @@ model Wastetype{
     id Int @id @default(autoincrement())
     wastetype String
     trashbins WastetypesOnTrashBins[]
-
 }
+
 model WastetypesOnTrashBins{
     trashbin Trashbin @relation(fields: [trashbinId], references: [id])
     trashbinId Int
@@ -42,5 +42,9 @@ model WastetypesOnTrashBins{
     assignedAt DateTime @default(now())
 
     @@id([trashbinId, wastetypeId])
+}
+enum UserRole{
+    APPUSER
+    ADMIN
 }
 
