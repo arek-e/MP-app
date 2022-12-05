@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3f0b6a-7935-4718-84ee-d107d3c66d17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/Binhunter.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +13,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HWYr0hGonTkE8wKTEMWSk65ATb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -28,7 +28,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/arek/Projects/Binhunter",
+    "last_opened_file_path": "/home/arek/AndroidStudioProjects/MP-app/backend",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/arek/AndroidStudioProjects/MP-app/backend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -41,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668402501972</updated>
       <workItem from="1668402503049" duration="17000" />
+      <workItem from="1670211948815" duration="2923000" />
     </task>
     <servers />
   </component>
