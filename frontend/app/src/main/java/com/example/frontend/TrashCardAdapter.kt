@@ -24,6 +24,8 @@ class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Ad
         val ifw_organic: ImageFilterView = binding.imageFilterViewOrganic
         val ifw_metal: ImageFilterView = binding.imageFilterViewMetal
         val ifw_liquid: ImageFilterView = binding.imageFilterViewLiquid
+        val ifw_glass: ImageFilterView = binding.imageFilterViewGlass
+        val ifw_paper: ImageFilterView = binding.imageFilterViewPaper
         val ifw_plastic: ImageFilterView = binding.imageFilterViewPlastic
     }
 
@@ -50,6 +52,14 @@ class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Ad
         }
 
         if (trashBinPlace.wastetypes.glass){
+            holder.ifw_glass.setAlpha(80)
+        }
+
+        if (trashBinPlace.wastetypes.paper){
+            holder.ifw_paper.setAlpha(80)
+        }
+
+        if (trashBinPlace.wastetypes.plastic){
             holder.ifw_plastic.setAlpha(80)
         }
 
