@@ -117,15 +117,21 @@
 
                         <androidx.constraintlayout.utils.widget.ImageFilterView
                             android:id="@+id/imageFilterView_organic"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_baseline_water_drop_24" />
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            app:srcCompat="@drawable/apple" />
+
+                        <androidx.constraintlayout.utils.widget.ImageFilterView
+                            android:id="@+id/imageFilterView_paper"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            app:srcCompat="@drawable/resource_package" />
 
                         <androidx.constraintlayout.utils.widget.ImageFilterView
                             android:id="@+id/imageFilterView_metal"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_baseline_water_drop_24" />
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            app:srcCompat="@drawable/can" />
 
                     </TableRow>
 
@@ -136,15 +142,21 @@
 
                         <androidx.constraintlayout.utils.widget.ImageFilterView
                             android:id="@+id/imageFilterView_liquid"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_baseline_water_drop_24" />
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            app:srcCompat="@drawable/water" />
 
                         <androidx.constraintlayout.utils.widget.ImageFilterView
                             android:id="@+id/imageFilterView_plastic"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_baseline_water_drop_24" />
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            app:srcCompat="@drawable/glass_recycling" />
+
+                        <androidx.constraintlayout.utils.widget.ImageFilterView
+                            android:id="@+id/imageFilterView_glass"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            app:srcCompat="@drawable/bottle" />
                     </TableRow>
 
                 </TableLayout>
