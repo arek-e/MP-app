@@ -1,9 +1,13 @@
 package com.example.frontend
 
+import android.content.Context
+import android.location.Address
+import android.location.Geocoder
 import android.location.Location
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,17 +18,20 @@ import com.example.frontend.databinding.FragmentMapsBinding
 import com.example.frontend.place.Place
 import com.example.frontend.place.PlaceRenderer
 import com.example.frontend.place.PlacesReader
+import com.example.frontend.place.Wastetypes
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.maps.android.clustering.ClusterManager
 import com.google.maps.android.ktx.addMarker
 import com.google.maps.android.ktx.awaitMap
 import com.google.maps.android.ktx.awaitMapLoad
+import java.util.*
 
 class MapsFragment :
     Fragment(),
@@ -36,6 +43,16 @@ class MapsFragment :
     lateinit var mMap: GoogleMap
     private val places: List<Place> by lazy {
         PlacesReader(requireContext()).read()
+    }
+
+    interface MapFragmentListener{
+        fun checkContributionMode(): Boolean
+    }
+    lateinit var mapFragmentListener: MapFragmentListener
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mapFragmentListener = context as MapFragmentListener
     }
 
     override fun onCreateView(
@@ -66,8 +83,13 @@ class MapsFragment :
 
             addClusteredMarkers(googleMap)
             googleMap.setInfoWindowAdapter(MarkerInfoWindowAdapter(requireContext()))
+
+            googleMap.setOnMapClickListener {
+                onMapClick(googleMap, it)
+            }
         }
     }
+
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
@@ -144,5 +166,36 @@ class MapsFragment :
     override fun onMyLocationClick(location: Location) {
         Toast.makeText(context, "Current location:\n$location", Toast.LENGTH_LONG)
             .show()
+    }
+
+    private fun onMapClick(googleMap: GoogleMap,latLng: LatLng){
+
+        if(mapFragmentListener.checkContributionMode()){
+            val name: String = "Test"
+            val geocoder: Geocoder = Geocoder(requireContext(), Locale.getDefault())
+            val addresses: List<Address> = geocoder.getFromLocation(latLng.latitude,latLng.latitude,10)
+            val wastetypes: Wastetypes = Wastetypes(
+                organic = false,
+                metal = false,
+                glass = false,
+                liquid = false
+            )
+
+            Log.d("ITM", "$addresses")
+
+
+            val marker = googleMap.addMarker {
+                title(name)
+                    .position(latLng)
+                    .icon(trashIcon)
+            }
+            // Set place as the tag on the marker object so it can be referenced within
+            // MarkerInfoWindowAdapter
+            marker.tag = Place(name,latLng,addresses[0].getAddressLine(0),1.0F, wastetypes)
+        }else {
+            Log.d("ITM", "Contribution mode not enabled!")
+        }
+
+
     }
 }

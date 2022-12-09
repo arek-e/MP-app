@@ -4,7 +4,7 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.frontend.databinding.TrashCardViewBinding
+import com.example.frontend.databinding.TrashCardItemViewBinding
 import com.example.frontend.place.Place
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -15,7 +15,7 @@ class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Ad
     private lateinit var listener: ItemListener
 
     // Provides reference to our type of views, aka our components inside the bingo card view
-    class ViewHolder(binding: TrashCardViewBinding): RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(binding: TrashCardItemViewBinding): RecyclerView.ViewHolder(binding.root) {
         val tv_location: TextView = binding.locationTextView
         val tv_distance: TextView = binding.distanceTextView
         val tv_info: TextView = binding.infoTextView
@@ -28,7 +28,7 @@ class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Ad
 
     // Creates the new recycleview item
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = TrashCardViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = TrashCardItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 

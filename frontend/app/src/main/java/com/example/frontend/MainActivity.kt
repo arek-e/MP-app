@@ -2,12 +2,10 @@ package com.example.frontend
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.pm.PackageManager
-import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
 import androidx.core.content.ContextCompat
@@ -17,19 +15,25 @@ import com.example.frontend.databinding.ActivityMainBinding
 import com.example.frontend.place.Place
 import com.example.frontend.place.PlacesReader
 import com.example.frontend.utils.PermissionUtils
-import com.google.android.gms.maps.MapFragment
 
 class MainActivity :
     AppCompatActivity(),
     OnRequestPermissionsResultCallback,
-    TrashCardAdapter.ItemListener
+    TrashCardAdapter.ItemListener,
+    MapsFragment.MapFragmentListener
 {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     lateinit var mapFragment: MapsFragment
     private var permissionDenied = false
+
+    private var contributionMode = false
+    private lateinit var contribution_enter_view: View
+    private lateinit var contribution_exit_view: View
+
     private val places: List<Place> by lazy {
         PlacesReader(this).read()
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -40,6 +44,13 @@ class MainActivity :
             add(binding.mapsFragFrame.id, mapFragment)
         }
 
+        binding.stubEnterContribute.layoutResource = R.layout.trash_card_bottom_enter_view
+        binding.stubExitContribute.layoutResource = R.layout.trash_card_bottom_exit_view
+
+        contribution_enter_view = binding.stubEnterContribute.inflate()
+        contribution_exit_view =  binding.stubExitContribute.inflate()
+        contribution_exit_view.visibility = View.INVISIBLE
+
 
         val trashCardAdapter = TrashCardAdapter(places as ArrayList<Place>)
         binding.trashRecyclerView.adapter = trashCardAdapter
@@ -47,6 +58,13 @@ class MainActivity :
 
         trashCardAdapter.setListener(this@MainActivity)
 
+    }
+
+    fun contributionModeTrigger(view: View?){
+        contributionMode = !contributionMode
+        contribution_enter_view.visibility = if(contributionMode) View.INVISIBLE else View.VISIBLE
+        contribution_exit_view.visibility = if(contributionMode) View.VISIBLE else View.INVISIBLE
+        binding.textViewContribution.visibility = if(contributionMode) View.VISIBLE else View.INVISIBLE
     }
 
 
@@ -146,5 +164,9 @@ class MainActivity :
     // Method is called when the listener is triggered from the recycle view item
     override fun onItemClicked(place: Place, position: Int) {
         // Run code when optional item inside the card is clicked
+    }
+
+    override fun checkContributionMode(): Boolean {
+        return contributionMode
     }
 }
