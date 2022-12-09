@@ -178,7 +178,9 @@ class MapsFragment :
                 organic = false,
                 metal = false,
                 glass = false,
-                liquid = false
+                liquid = false,
+                paper = false,
+                plastic = false
             )
 
             Log.d("ITM", "$addresses")
