@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import androidx.core.content.ContextCompat
 import com.example.frontend.BitmapHelper
+//import com.example.frontend.BitmapHelper
 import com.example.frontend.R
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.BitmapDescriptor
