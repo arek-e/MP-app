@@ -190,7 +190,9 @@ class MapsFragment :
                 title(name)
                     .position(latLng)
                     .icon(trashIcon)
+                    .draggable(true)
             }
+
             // Set place as the tag on the marker object so it can be referenced within
             // MarkerInfoWindowAdapter
             marker.tag = Place(name,latLng,addresses[0].getAddressLine(0),1.0F, wastetypes)

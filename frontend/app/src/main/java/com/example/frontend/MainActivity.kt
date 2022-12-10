@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
@@ -12,6 +13,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.commit
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.frontend.databinding.ActivityMainBinding
+import com.example.frontend.databinding.EditTrashCardViewBinding
+import com.example.frontend.databinding.NewTrashCardViewBinding
+import com.example.frontend.databinding.TrashBinListViewBinding
 import com.example.frontend.place.Place
 import com.example.frontend.place.PlacesReader
 import com.example.frontend.utils.PermissionUtils
@@ -23,48 +27,138 @@ class MainActivity :
     MapsFragment.MapFragmentListener
 {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    lateinit var mapFragment: MapsFragment
-    private var permissionDenied = false
+    private lateinit var bindingCardListStub : TrashBinListViewBinding
+    private lateinit var bindingCardAddStub :  NewTrashCardViewBinding
+    private lateinit var bindingCardEditStub :  EditTrashCardViewBinding
 
-    private var contributionMode = false
-    private lateinit var contribution_enter_view: View
-    private lateinit var contribution_exit_view: View
+    lateinit var mapFragment: MapsFragment
+
+    private var permissionDenied = false
+    //private var contributionMode = false
+
+    private lateinit var cardBinListView: View
+    private lateinit var cardBinAddView: View
+    private lateinit var cardBinEditView: View
+    private lateinit var contributionEnterView: View
+    private lateinit var contributionExitView: View
+    private lateinit var contributionConfirmView: View
 
     private val places: List<Place> by lazy {
         PlacesReader(this).read()
+    }
+
+    var currentMode: Int = 0
+    enum class ContributionMode(val value: Int) {
+        EXIT(1), ENTER(0), CANCEL(2);
+
+        companion object {
+            fun create(x: Int): ContributionMode {
+                return when (x) {
+                    0 -> ENTER
+                    1 -> EXIT
+                    2 -> CANCEL
+                    else -> throw IllegalStateException()
+                }
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        // Create the and attach the map fragment
         mapFragment = MapsFragment()
         val fragManager = supportFragmentManager
         fragManager.commit{
             add(binding.mapsFragFrame.id, mapFragment)
         }
 
-        binding.stubEnterContribute.layoutResource = R.layout.trash_card_bottom_enter_view
-        binding.stubExitContribute.layoutResource = R.layout.trash_card_bottom_exit_view
+        /**
+         *  Inflate binding of viewStubs in order to access components inside the layout
+         */
+        binding.stubBinList.setOnInflateListener {_, inflateId -> bindingCardListStub = TrashBinListViewBinding.bind(inflateId)}
+        binding.stubBinAdd.setOnInflateListener {_, inflateId -> bindingCardAddStub = NewTrashCardViewBinding.bind(inflateId)}
+        binding.stubBinEdit.setOnInflateListener {_, inflateId -> bindingCardEditStub = EditTrashCardViewBinding.bind(inflateId)}
 
-        contribution_enter_view = binding.stubEnterContribute.inflate()
-        contribution_exit_view =  binding.stubExitContribute.inflate()
-        contribution_exit_view.visibility = View.INVISIBLE
 
+        /**
+         *  Set the layout resource file that should be used for the different viewStubs
+         */
+        // Main card item
+        binding.stubBinList.layoutResource = R.layout.trash_bin_list_view
+        binding.stubBinAdd.layoutResource = R.layout.new_trash_card_view
+        binding.stubBinEdit.layoutResource = R.layout.edit_trash_card_view
+        // Bottom buttons
+        binding.stubEnterContribute.layoutResource = R.layout.trash_bottom_enter_view
+        binding.stubExitContribute.layoutResource = R.layout.trash_bottom_contribute_view
+        binding.stubConfirmContribute.layoutResource = R.layout.trash_bottom_confirm_view
+
+
+        /**
+         *  Inflate views that are used throughout the trash bin card
+         */
+        cardBinListView = binding.stubBinList.inflate()
+        cardBinAddView = binding.stubBinAdd.inflate()
+        cardBinEditView = binding.stubBinEdit.inflate()
+        contributionEnterView = binding.stubEnterContribute.inflate()
+        contributionExitView =  binding.stubExitContribute.inflate()
+        contributionConfirmView = binding.stubConfirmContribute.inflate()
+
+        /**
+         *  Hide the viewStubs that are not used immediatly
+         */
+        contributionExitView.visibility = View.GONE
+        contributionConfirmView.visibility = View.GONE
+        cardBinAddView.visibility = View.GONE
+        cardBinEditView.visibility = View.GONE
 
         val trashCardAdapter = TrashCardAdapter(places as ArrayList<Place>)
-        binding.trashRecyclerView.adapter = trashCardAdapter
-        binding.trashRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+        bindingCardListStub.trashRecyclerView.adapter = trashCardAdapter
+        bindingCardListStub.trashRecyclerView.adapter = trashCardAdapter
+        bindingCardListStub.trashRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
 
-        trashCardAdapter.setListener(this@MainActivity)
+        //trashCardAdapter.setListener(this@MainActivity)
 
     }
 
     fun contributionModeTrigger(view: View?){
-        contributionMode = !contributionMode
-        contribution_enter_view.visibility = if(contributionMode) View.INVISIBLE else View.VISIBLE
-        contribution_exit_view.visibility = if(contributionMode) View.VISIBLE else View.INVISIBLE
-        binding.textViewContribution.visibility = if(contributionMode) View.VISIBLE else View.INVISIBLE
+        when(ContributionMode.create(currentMode)){
+            ContributionMode.ENTER -> {
+                currentMode = ContributionMode.EXIT.value
+                contributionEnterView.visibility = View.GONE
+                contributionExitView.visibility = View.VISIBLE
+                binding.textViewContribution?.visibility = View.VISIBLE
+            }
+            ContributionMode.EXIT -> {
+                currentMode = ContributionMode.ENTER.value
+
+                contributionEnterView.visibility = View.VISIBLE
+                contributionExitView.visibility = View.GONE
+                binding.textViewContribution?.visibility = View.INVISIBLE
+                cardBinListView.visibility = View.VISIBLE
+            }
+            ContributionMode.CANCEL -> {
+                currentMode = ContributionMode.EXIT.value
+                cardBinListView.visibility = View.VISIBLE
+                cardBinAddView.visibility = View.GONE
+
+                contributionConfirmView.visibility = View.GONE
+                contributionExitView.visibility = View.VISIBLE
+
+            }
+        }
+        Log.d("ITM", "$currentMode")
+    }
+
+    fun addNewBin(view: View?){
+        currentMode = ContributionMode.CANCEL.value
+        Log.d("ITM", "$currentMode")
+
+        cardBinAddView.visibility = View.VISIBLE
+        cardBinListView.visibility = View.GONE
+        contributionConfirmView.visibility = View.VISIBLE
+        contributionExitView.visibility = View.GONE
     }
 
 
@@ -167,6 +261,9 @@ class MainActivity :
     }
 
     override fun checkContributionMode(): Boolean {
-        return contributionMode
+        if(currentMode == ContributionMode.EXIT.value || currentMode == ContributionMode.CANCEL.value){
+            return true
+        }
+        return false
     }
 }
