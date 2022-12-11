@@ -1,7 +1,5 @@
 package com.example.frontend
 
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frontend.databinding.TrashCardItemViewBinding
@@ -9,7 +7,6 @@ import com.example.frontend.place.Place
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.constraintlayout.utils.widget.ImageFilterView
-import com.example.frontend.place.Wastetypes
 
 class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Adapter<TrashCardAdapter.ViewHolder>() {
     private lateinit var listener: ItemListener
@@ -23,6 +20,8 @@ class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Ad
         val ifw_organic: ImageFilterView = binding.imageFilterViewOrganic
         val ifw_metal: ImageFilterView = binding.imageFilterViewMetal
         val ifw_liquid: ImageFilterView = binding.imageFilterViewLiquid
+        val ifw_glass: ImageFilterView = binding.imageFilterViewGlass
+        val ifw_paper: ImageFilterView = binding.imageFilterViewPaper
         val ifw_plastic: ImageFilterView = binding.imageFilterViewPlastic
     }
 
@@ -37,26 +36,27 @@ class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Ad
         val trashBinPlace = binPlaces[position]
         holder.tv_location.text = trashBinPlace.address
         if (trashBinPlace.wastetypes.liquid){
-            holder.ifw_liquid.imageTintList = ColorStateList.valueOf(Color.RED)
-        }else{
-            holder.ifw_liquid.imageTintList = ColorStateList.valueOf(Color.BLUE)
+            holder.ifw_liquid.setAlpha(80)
         }
 
         if (trashBinPlace.wastetypes.metal){
-            holder.ifw_metal.imageTintList = ColorStateList.valueOf(Color.RED)
-        }else{
-            holder.ifw_metal.imageTintList = ColorStateList.valueOf(Color.BLUE)
+            holder.ifw_metal.setAlpha(80)
         }
+
         if (trashBinPlace.wastetypes.organic){
-            holder.ifw_organic.imageTintList = ColorStateList.valueOf(Color.RED)
-        }else{
-            holder.ifw_organic.imageTintList = ColorStateList.valueOf(Color.BLUE)
+            holder.ifw_organic.setAlpha(80)
         }
 
         if (trashBinPlace.wastetypes.glass){
-            holder.ifw_plastic.imageTintList = ColorStateList.valueOf(Color.RED)
-        }else{
-            holder.ifw_plastic.imageTintList = ColorStateList.valueOf(Color.BLUE)
+            holder.ifw_glass.setAlpha(80)
+        }
+
+        if (trashBinPlace.wastetypes.paper){
+            holder.ifw_paper.setAlpha(80)
+        }
+
+        if (trashBinPlace.wastetypes.plastic){
+            holder.ifw_plastic.setAlpha(80)
         }
 
 

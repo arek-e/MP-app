@@ -6,27 +6,25 @@
     android:elevation="10dp">
 
     <Button
-        android:id="@+id/btn_exit_contribute"
+        android:id="@+id/btn_exit"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
         android:onClick="contributionModeTrigger"
         android:rotationY="-360"
         android:text="Exit Contribute\n Mode"
-        app:layout_constraintEnd_toStartOf="@+id/btn_add_bin"
+        app:layout_constraintEnd_toStartOf="@+id/btn_confirm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_add_bin"
+        android:id="@+id/btn_confirm"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="20dp"
         android:backgroundTint="#55FFA7"
+        android:onClick="addNewBin"
         android:rotationY="-360"
         android:text="Add New Bin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_exit_contribute"
+        app:layout_constraintStart_toEndOf="@+id/btn_exit"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

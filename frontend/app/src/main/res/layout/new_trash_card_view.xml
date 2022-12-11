@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editText_bin_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Give the bin a name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_bin_name">
+
+        <ImageView
+            android:id="@+id/icon_paper"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:tint="#4545dd45"
+            app:srcCompat="@drawable/resource_package"
+            app:tint="@color/disabled" />
+
+        <ImageView
+            android:id="@+id/icon_liquid"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:tint="@color/disabled"
+            app:srcCompat="@drawable/water" />
+
+        <ImageView
+            android:id="@+id/icon_glass"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:tint="@color/disabled"
+            android:tintMode="src_atop"
+            app:srcCompat="@drawable/glass_recycling" />
+
+        <ImageView
+            android:id="@+id/icon_organic"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:tint="@color/disabled"
+            app:srcCompat="@drawable/apple" />
+
+        <ImageView
+            android:id="@+id/icon_plastic"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:tint="@color/disabled"
+            app:srcCompat="@drawable/bottle" />
+
+        <ImageView
+            android:id="@+id/icon_metal"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:tint="@color/disabled"
+            app:srcCompat="@drawable/can" />
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/switch_full"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:minHeight="48dp"
+        android:text="IS THE BIN FULL?"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:textSize="14sp" />
+
+    <Switch
+        android:id="@+id/switch_damaged"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:minHeight="48dp"
+        android:text="IS THE BIN DAMAGED?"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_full"
+        tools:textSize="14sp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

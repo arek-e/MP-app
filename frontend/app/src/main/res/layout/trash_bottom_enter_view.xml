@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btn_enter_contribute"
+        android:id="@+id/btn_enter"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="40dp"

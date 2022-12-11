@@ -1,15 +1,18 @@
 package com.example.frontend.place
 
+import com.example.frontend.api.models.Wastetypes
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.clustering.ClusterItem
 
 
 data class Place(
-    val name: String,
-    val latLng: LatLng,
-    val address: String,
-    val rating: Float,
-    val wastetypes: Wastetypes
+    var name: String,
+    var latLng: LatLng,
+    var address: String,
+    var isMissing: Boolean = false,
+    var isFull: Boolean,
+    var isDamaged: Boolean,
+    var wastetypes: Wastetypes
 
 ) : ClusterItem {
     override fun getPosition(): LatLng {
@@ -26,10 +29,3 @@ data class Place(
 
 }
 
-data class Wastetypes(
-    val organic: Boolean,
-    val metal: Boolean,
-    val glass: Boolean,
-    val liquid: Boolean
-
-)

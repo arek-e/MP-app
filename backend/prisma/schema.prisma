@@ -3,9 +3,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  binaryTargets   = "native"
-
-  previewFeatures = ["improvedQueryRaw"]
 }
 
 datasource db {
@@ -20,41 +17,42 @@ model User{
     lastname String
     password String
     phonenumber Int
-    trashbins Trashbin[]
+    //trashBins Trashbin[]
 }
-
 model Trashbin{
     id Int @id @default(autoincrement())
-    author      User? @relation(fields: [authorId], references: [id])
-    authorId    Int?
-    status      String
+    // author User @relation(fields: [authorId], references: [id])
+    // authorId Int
 
-    wastetypes  WastetypesOnTrashbins[]
+    name String
+    address String
 
-    longitude   Float
-    latitude    Float
-    radius      Int
+    damaged Boolean
+    full Boolean
+    missing Boolean
 
-    createdAt   DateTime @default(now())
+    latitude Float
+    longitude Float
+
+    wastetypes WastetypesOnTrashBins[]
 }
-
-model Wastetypes{
+model Wastetype{
     id Int @id @default(autoincrement())
-    type String
-    trashbins WastetypesOnTrashbins[]
+    wastetype String
+    trashbins WastetypesOnTrashBins[]
 }
 
-model WastetypesOnTrashbins{
+model WastetypesOnTrashBins{
     trashbin Trashbin @relation(fields: [trashbinId], references: [id])
     trashbinId Int
-
-    wastetype Wastetypes @relation(fields:[wastetypeId], references: [id])
+    wastetype Wastetype @relation(fields:[wastetypeId], references: [id])
     wastetypeId Int
+    assignedAt DateTime @default(now())
 
     @@id([trashbinId, wastetypeId])
 }
-
 enum UserRole{
     APPUSER
     ADMIN
 }
+
