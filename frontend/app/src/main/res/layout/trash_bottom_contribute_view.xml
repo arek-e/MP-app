@@ -7,23 +7,25 @@
 
     <Button
         android:id="@+id/btn_exit"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
         android:onClick="contributionModeTrigger"
-        android:rotationY="-360"
-        android:text="Exit Contribute\n Mode"
+        android:text="Exit Contribution\nMode"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_confirm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_confirm"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:backgroundTint="#55FFA7"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#1DEF94"
         android:onClick="addNewBin"
-        android:rotationY="-360"
         android:text="Add New Bin"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_exit"
         app:layout_constraintTop_toTopOf="parent" />

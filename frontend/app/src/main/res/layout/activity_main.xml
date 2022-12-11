@@ -61,14 +61,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:background="@color/primary"
+                    android:alpha="0.8"
+                    android:background="@drawable/contibution_mode_rounded_corners"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="4dp"
                     android:text="Contribution mode active"
-                    android:textColor="#212121"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toTopOf="@+id/center_card"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/textView_trash_card_title"
                     app:layout_constraintVertical_bias="0.0"
+                    tools:ignore="TextContrastCheck"
                     tools:visibility="visible" />
 
                 <TextView

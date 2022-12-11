@@ -7,20 +7,25 @@
 
     <Button
         android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
         android:onClick="contributionModeTrigger"
-        android:text="Cancel"
+        android:text="Exit Contribution Mode"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_confirm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_confirm"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:backgroundTint="#55FFA7"
-        android:text="Confirm"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#1DEF94"
+        android:onClick="confirmBin"
+        android:text="Confirm Contribution"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_cancel"
         app:layout_constraintTop_toTopOf="parent" />
