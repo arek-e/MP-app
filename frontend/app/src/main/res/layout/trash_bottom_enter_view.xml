@@ -7,11 +7,13 @@
     <Button
         android:id="@+id/btn_enter"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:onClick="contributionModeTrigger"
         android:text="Contribute Now"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
