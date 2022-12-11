@@ -294,8 +294,10 @@ class MapsFragment :
 
         APIClient.service.createBin(newBin).enqueue(object: Callback<TrashbinResponse> {
             override fun onResponse(call: Call<TrashbinResponse>, response: Response<TrashbinResponse>) {
-                if (response.isSuccessful)
+                if (response.isSuccessful){
+                    Log.d("ITM", "Successful")
                     success(response.body())
+                }
                 else
                     Log.d("ITM", "FAILURE")
             }
@@ -333,8 +335,8 @@ class MapsFragment :
     }
 
     fun geoCodeAddress(pos: LatLng): String{
-        val geocoder: Geocoder = Geocoder(requireContext(), Locale.getDefault())
-        val addresses: List<Address> = geocoder.getFromLocation(pos.latitude,pos.latitude,10)
+        val geocoder: Geocoder = Geocoder(requireContext(), Locale.KOREA)
+        val addresses: List<Address> = geocoder.getFromLocation(pos.latitude,pos.latitude,1)
         Log.d("ITM", "$addresses")
         return addresses[0].getAddressLine(0)
     }

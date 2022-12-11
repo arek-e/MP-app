@@ -8,7 +8,7 @@ object APIClient {
 
     private fun initService(): TrashbinService =
         Retrofit.Builder()
-            .baseUrl("http://192.168.68.130:3000")
+            .baseUrl("https://binhunter.up.railway.app")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(TrashbinService::class.java)

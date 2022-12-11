@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3f0b6a-7935-4718-84ee-d107d3c66d17" name="Changes" comment="- Fixed endpoint for creating new bin">
-      <change afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/api/APIClient.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/api/TrashbinService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/api/models/Trashbin.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/api/models/Wastetypes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20221205052337_y/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/migration_lock.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/MapsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/MapsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/place/Place.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/place/Place.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/place/PlaceResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/place/PlaceResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/api/APIClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/api/APIClient.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +43,16 @@
       <updated>1668402501972</updated>
       <workItem from="1668402503049" duration="17000" />
       <workItem from="1670211948815" duration="2923000" />
-      <workItem from="1670748442497" duration="10126000" />
+      <workItem from="1670748442497" duration="10398000" />
     </task>
+    <task id="LOCAL-00001" summary="- Fixed endpoint for creating new bin">
+      <created>1670762097861</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670762097861</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
