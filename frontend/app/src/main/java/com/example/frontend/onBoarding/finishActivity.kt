@@ -1,5 +1,6 @@
 package com.example.frontend.onBoarding
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -14,9 +15,13 @@ class finishActivity : AppCompatActivity() {
         setContentView(binding.root)
         val view = binding.root
         setContentView(view)
+        //val intent = Intent(this,MainActivity::class.java)
         btnStart = binding.layoutStart
         btnStart.setOnClickListener {
-            finish()
+            btnStart.setOnClickListener { startActivity(intent)}
+
         }
     }
 }
+
+
