@@ -1,7 +1,5 @@
 package com.example.frontend
 
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frontend.databinding.TrashCardItemViewBinding
@@ -9,8 +7,6 @@ import com.example.frontend.place.Place
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.constraintlayout.utils.widget.ImageFilterView
-import androidx.core.view.ViewCompat.setAlpha
-import com.example.frontend.place.Wastetypes
 
 class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Adapter<TrashCardAdapter.ViewHolder>() {
     private lateinit var listener: ItemListener

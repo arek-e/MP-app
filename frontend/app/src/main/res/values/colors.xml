@@ -8,4 +8,5 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#222B45</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="disabled">#CC424242</color>
 </resources>

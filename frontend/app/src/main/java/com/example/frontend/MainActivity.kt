@@ -28,7 +28,7 @@ class MainActivity :
 {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private lateinit var bindingCardListStub : TrashBinListViewBinding
-    private lateinit var bindingCardAddStub :  NewTrashCardViewBinding
+    lateinit var bindingCardAddStub :  NewTrashCardViewBinding
     private lateinit var bindingCardEditStub :  EditTrashCardViewBinding
 
     lateinit var mapFragment: MapsFragment
@@ -37,11 +37,11 @@ class MainActivity :
     //private var contributionMode = false
 
     private lateinit var cardBinListView: View
-    private lateinit var cardBinAddView: View
+    lateinit var cardBinAddView: View
     private lateinit var cardBinEditView: View
     private lateinit var contributionEnterView: View
     private lateinit var contributionExitView: View
-    private lateinit var contributionConfirmView: View
+    lateinit var contributionConfirmView: View
 
     private val places: List<Place> by lazy {
         PlacesReader(this).read()
@@ -159,6 +159,8 @@ class MainActivity :
         cardBinListView.visibility = View.GONE
         contributionConfirmView.visibility = View.VISIBLE
         contributionExitView.visibility = View.GONE
+
+        mapFragment.prepareNewBin()
     }
 
 
@@ -173,7 +175,7 @@ class MainActivity :
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ){
-            mapFragment.mMap.isMyLocationEnabled = true
+            mapFragment.googleMap.isMyLocationEnabled = true
             return
         }
 

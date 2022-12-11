@@ -91,21 +91,21 @@
                 android:paddingVertical="5dp">
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/icon_glass"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/glass_recycling" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/icon_liquid"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/water" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/icon_paper"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
@@ -118,21 +118,21 @@
                 android:paddingVertical="5dp">
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/icon_organic"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/apple" />
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/icon_plastic"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/bottle" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/icon_metal"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
@@ -156,14 +156,14 @@
                 tools:textSize="14sp" />
 
             <Switch
-                android:id="@+id/switch1"
+                android:id="@+id/switch_full"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:text="FULL?"
                 tools:textSize="14sp" />
 
             <Switch
-                android:id="@+id/switch6"
+                android:id="@+id/switch_damaged"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:text="DAMAGED?"
