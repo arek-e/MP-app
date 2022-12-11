@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/info_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Most closeby"
+        android:textColor="@color/primary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/status_TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location_TextView" />
+
+    <TextView
+        android:id="@+id/location_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="78-1 HAGYE-DONG"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/status_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Just emptied"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/distance_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="0.3 KM"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintStart_toEndOf="@+id/loc_imageView"
+        app:layout_constraintTop_toTopOf="@+id/status_TextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/loc_imageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/distance"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/distance_TextView"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/status_TextView"
+        app:layout_constraintTop_toTopOf="@+id/status_TextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/primary"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingVertical="5dp">
+
+                <ImageView
+                    android:id="@+id/icon_glass"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/glass_recycling" />
+
+                <ImageView
+                    android:id="@+id/icon_liquid"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/water" />
+
+                <ImageView
+                    android:id="@+id/icon_paper"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/resource_package" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingVertical="5dp">
+
+                <ImageView
+                    android:id="@+id/icon_organic"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/apple" />
+
+                <ImageView
+                    android:id="@+id/icon_plastic"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/bottle" />
+
+                <ImageView
+                    android:id="@+id/icon_metal"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/can" />
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <Switch
+                android:id="@+id/switch7"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="MISSING?"
+                tools:textSize="14sp" />
+
+            <Switch
+                android:id="@+id/switch_full"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="FULL?"
+                tools:textSize="14sp" />
+
+            <Switch
+                android:id="@+id/switch_damaged"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="DAMAGED?"
+                tools:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

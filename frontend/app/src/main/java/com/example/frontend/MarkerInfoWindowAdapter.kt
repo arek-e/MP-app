@@ -19,10 +19,12 @@ class MarkerInfoWindowAdapter(private val context: Context): GoogleMap.InfoWindo
 
         val view = LayoutInflater.from(context).inflate(R.layout.marker_info_contents, null)
 
+        /*
         view.findViewById<ImageFilterView>(R.id.imageFilterView_organic).imageTintList = if (place.rating <= 1) ColorStateList.valueOf(Color.RED) else ColorStateList.valueOf(Color.BLUE)
         view.findViewById<ImageFilterView>(R.id.imageFilterView_metal).imageTintList = if (place.rating <= 2) ColorStateList.valueOf(Color.RED) else ColorStateList.valueOf(Color.BLUE)
         view.findViewById<ImageFilterView>(R.id.imageFilterView_liquid).imageTintList = if (place.rating <= 3) ColorStateList.valueOf(Color.RED) else ColorStateList.valueOf(Color.BLUE)
         view.findViewById<ImageFilterView>(R.id.imageFilterView_glass).imageTintList = if (place.rating <= 4) ColorStateList.valueOf(Color.RED) else ColorStateList.valueOf(Color.BLUE)
+         */
         view.findViewById<TextView>(R.id.text_view_title).text = place.name
         view.findViewById<TextView>(R.id.text_view_address).text = place.address
 

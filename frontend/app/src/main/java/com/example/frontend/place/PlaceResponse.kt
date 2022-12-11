@@ -1,12 +1,15 @@
 package com.example.frontend.place
 
+import com.example.frontend.api.models.Wastetypes
 import com.google.android.gms.maps.model.LatLng
 
 data class PlaceResponse(
     val geometry: Geometry,
     val name: String,
     val vicinity: String,
-    val rating: Float,
+    val isMissing: Boolean,
+    val isFull: Boolean,
+    val isDamaged: Boolean,
     val wastetypes: Wastetypes
 ) {
 
@@ -24,6 +27,8 @@ fun PlaceResponse.toPlace(): Place = Place(
     name = name,
     latLng = LatLng(geometry.location.lat, geometry.location.lng),
     address = vicinity,
-    rating = rating,
+    isMissing = isMissing,
+    isFull = isFull,
+    isDamaged = isDamaged,
     wastetypes = wastetypes
 )
