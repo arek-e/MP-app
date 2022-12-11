@@ -13,7 +13,7 @@ import com.example.frontend.utils.Animatoo
 import com.google.android.material.tabs.TabLayoutMediator
 
 
-class onBoardingActivity : AppCompatActivity() {
+class OnBoardingActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityOnBoardingBinding.inflate(layoutInflater) }
 

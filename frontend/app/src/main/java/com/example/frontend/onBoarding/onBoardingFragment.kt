@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import com.airbnb.lottie.LottieAnimationView
-import com.example.frontend.R
 import com.example.frontend.databinding.FragmentOnBoardingBinding
 
 // TODO: Rename parameter arguments, choose names that match
