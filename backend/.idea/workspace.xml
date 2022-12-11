@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff3f0b6a-7935-4718-84ee-d107d3c66d17" name="Changes" comment="">
+    <list default="true" id="ff3f0b6a-7935-4718-84ee-d107d3c66d17" name="Changes" comment="- Fixed endpoint for creating new bin">
+      <change afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/api/APIClient.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/api/TrashbinService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/api/models/Trashbin.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/api/models/Wastetypes.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20221205052337_y/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/migration_lock.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/MapsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/MapsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/place/Place.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/place/Place.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/place/PlaceResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/src/main/java/com/example/frontend/place/PlaceResponse.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,17 +34,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/arek/AndroidStudioProjects/MP-app/backend",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/arek/AndroidStudioProjects/MP-app/backend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/arek/AndroidStudioProjects/MP-app/backend&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/arek/AndroidStudioProjects/MP-app/backend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -44,6 +55,7 @@
       <updated>1668402501972</updated>
       <workItem from="1668402503049" duration="17000" />
       <workItem from="1670211948815" duration="2923000" />
+      <workItem from="1670748442497" duration="10126000" />
     </task>
     <servers />
   </component>
@@ -60,5 +72,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Fixed endpoint for creating new bin" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Fixed endpoint for creating new bin" />
   </component>
 </project>

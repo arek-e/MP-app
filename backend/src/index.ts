@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
 import express from "express";
 
 const prisma = new PrismaClient();
@@ -22,7 +22,7 @@ app.get('/trashbins', async(req, res) => {
     const trashbins = await prisma.trashbin.findMany()
     res.json(trashbins)
 })
-
+/**
 //Getting the trashbins depending on the wastetype
 app.get('/trashbin/wastetype/:type', async(req, res) => {
   const type = req.params.type
@@ -31,7 +31,7 @@ app.get('/trashbin/wastetype/:type', async(req, res) => {
       wastetypes: {
         some: {
           wastetype: {
-            wastetype: type
+            wastetype:
           }
         }
       }
@@ -39,6 +39,8 @@ app.get('/trashbin/wastetype/:type', async(req, res) => {
   })
   res.json(trashbinsWithGlass)
 })
+*/
+
 //Creating a new user
 app.post('/new/user', async(req, res) =>{
     const newUser = await prisma.user.create({
@@ -46,11 +48,50 @@ app.post('/new/user', async(req, res) =>{
     })
     res.json(newUser)
 })
+
+
+
 //creating a new bin
-app.post('/new/trashbin', async(req, res) =>{
-    const newTrashbin = await prisma.trashbin.create({
-        data:{...req.body},
-    })
+app.post('/api/trashbin', async(req, res) => {
+    //console.log(req.body)
+
+    let bin: Prisma.TrashbinCreateInput
+
+    let types: Prisma.WastetypesOnTrashBinsCreateManyTrashbinInput[] = []
+    for (const property in req.body.wastetypes) {
+        let trashType = property
+        let toggled = req.body.wastetypes[property]
+        if (toggled){
+            let type = await prisma.wastetype.findFirst({
+                where: {
+                    wastetype: trashType
+                }
+            })
+            types.push({wastetypeId: type!.id })
+        }
+    }
+    console.log(types);
+
+    bin = {
+        name: req.body.name,
+        address: req.body.address,
+        damaged: req.body.damaged,
+        missing: req.body.missing,
+        full: req.body.full,
+        latitude: req.body.position.latitude,
+        longitude: req.body.position.longitude,
+        wastetypes: {
+            createMany: {
+                data: types
+            }
+        }
+    }
+
+    console.log(bin);
+
+
+    const newTrashbin = await prisma.trashbin.create({data: bin})
+
     res.json(newTrashbin)
 })
 

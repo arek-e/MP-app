@@ -11,17 +11,22 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
-import android.widget.RadioGroup.OnCheckedChangeListener
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.frontend.databinding.*
+import com.example.frontend.api.APIClient
+import com.example.frontend.api.TrashbinService
+import com.example.frontend.api.models.Trashbin
+import com.example.frontend.api.models.TrashbinResponse
+import com.example.frontend.api.models.Wastetypes
+import com.example.frontend.databinding.FragmentMapsBinding
+import com.example.frontend.databinding.NewTrashCardViewBinding
 import com.example.frontend.place.Place
 import com.example.frontend.place.PlaceRenderer
 import com.example.frontend.place.PlacesReader
-import com.example.frontend.place.Wastetypes
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.GoogleMap.OnMarkerDragListener
@@ -31,12 +36,16 @@ import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.Marker
-import com.google.android.material.textfield.TextInputLayout
-import com.google.android.material.textfield.TextInputLayout.OnEditTextAttachedListener
 import com.google.maps.android.clustering.ClusterManager
 import com.google.maps.android.ktx.addMarker
 import com.google.maps.android.ktx.awaitMap
 import com.google.maps.android.ktx.awaitMapLoad
+import kotlinx.coroutines.channels.ChannelResult.Companion.failure
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Response.success
+import retrofit2.http.Tag
 import java.util.*
 
 
@@ -49,6 +58,8 @@ class MapsFragment :
     private lateinit var binding: FragmentMapsBinding
     private lateinit var bindingCardAddStub :  NewTrashCardViewBinding
     private lateinit var contributionConfirmView: View
+
+    lateinit var apiInterface: TrashbinService
 
 
     var binCreationStarted = false
@@ -89,6 +100,7 @@ class MapsFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         lifecycleScope.launchWhenCreated {
@@ -265,8 +277,7 @@ class MapsFragment :
             return
         }
 
-
-        var newBin = Place(
+        var newBin = Trashbin(
             name,
             newMarker!!.position,
             geoCodeAddress(newMarker!!.position),
@@ -280,6 +291,21 @@ class MapsFragment :
         newMarker!!.tag = newBin
 
         Log.d("ITM", "$newBin")
+
+        APIClient.service.createBin(newBin).enqueue(object: Callback<TrashbinResponse> {
+            override fun onResponse(call: Call<TrashbinResponse>, response: Response<TrashbinResponse>) {
+                if (response.isSuccessful)
+                    success(response.body())
+                else
+                    Log.d("ITM", "FAILURE")
+            }
+
+            override fun onFailure(call: Call<TrashbinResponse>, t: Throwable) {
+                Log.d("ITM", "$t")
+            }
+
+        })
+
 
         resetCreation()
 
@@ -336,13 +362,6 @@ class MapsFragment :
                     .draggable(true)
             }
         }
-
-
-
-        // Set place as the tag on the marker object so it can be referenced within
-        // MarkerInfoWindowAdapter
-        //marker.tag = Place(name,latLng,addresses[0].getAddressLine(0),1.0F, wastetypes)
-
 
     }
 

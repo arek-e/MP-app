@@ -1,5 +1,6 @@
 package com.example.frontend.place
 
+import com.example.frontend.api.models.Wastetypes
 import com.google.android.gms.maps.model.LatLng
 
 data class PlaceResponse(

@@ -17,16 +17,24 @@ model User{
     lastname String
     password String
     phonenumber Int
-    trashBins Trashbin[]
+    //trashBins Trashbin[]
 }
 model Trashbin{
     id Int @id @default(autoincrement())
-    status String
-    author User @relation(fields: [authorId], references: [id])
-    authorId Int
+    // author User @relation(fields: [authorId], references: [id])
+    // authorId Int
+
+    name String
+    address String
+
+    damaged Boolean
+    full Boolean
+    missing Boolean
+
+    latitude Float
+    longitude Float
+
     wastetypes WastetypesOnTrashBins[]
-    latitude String
-    longitude String
 }
 model Wastetype{
     id Int @id @default(autoincrement())

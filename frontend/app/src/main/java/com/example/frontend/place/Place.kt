@@ -1,5 +1,6 @@
 package com.example.frontend.place
 
+import com.example.frontend.api.models.Wastetypes
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.clustering.ClusterItem
 
@@ -28,11 +29,3 @@ data class Place(
 
 }
 
-data class Wastetypes(
-    var paper: Boolean = false,
-    var liquid: Boolean = false,
-    var glass: Boolean = false,
-    var organic: Boolean = false,
-    var plastic: Boolean = false,
-    var metal: Boolean = false
-)
