@@ -59,6 +59,10 @@ class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Ad
             holder.ifw_plastic.setAlpha(80)
         }
 
+        holder.itemView.setOnClickListener{
+            listener.onItemClicked(trashBinPlace, position)
+        }
+
 
     }
     // Necessary to override

@@ -18,7 +18,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.frontend.api.APIClient
-import com.example.frontend.api.TrashbinService
 import com.example.frontend.api.models.Trashbin
 import com.example.frontend.api.models.TrashbinResponse
 import com.example.frontend.api.models.Wastetypes
@@ -40,12 +39,10 @@ import com.google.maps.android.clustering.ClusterManager
 import com.google.maps.android.ktx.addMarker
 import com.google.maps.android.ktx.awaitMap
 import com.google.maps.android.ktx.awaitMapLoad
-import kotlinx.coroutines.channels.ChannelResult.Companion.failure
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Response.success
-import retrofit2.http.Tag
 import java.util.*
 
 
@@ -58,9 +55,6 @@ class MapsFragment :
     private lateinit var binding: FragmentMapsBinding
     private lateinit var bindingCardAddStub :  NewTrashCardViewBinding
     private lateinit var contributionConfirmView: View
-
-    lateinit var apiInterface: TrashbinService
-
 
     var binCreationStarted = false
     private var newMarker: Marker? = null
@@ -147,9 +141,13 @@ class MapsFragment :
 
     }
 
+    fun moveMapToMaker(pos: LatLng){
+        googleMap.animateCamera(CameraUpdateFactory.newLatLng(pos))
+    }
+
     private val trashIcon: BitmapDescriptor by lazy {
         val color = ContextCompat.getColor(requireContext(), R.color.primary)
-        BitmapHelper.vectorToBitmap(requireContext(), R.drawable.ic_baseline_restore_from_trash_24, color)
+        BitmapHelper.vectorToBitmap(requireContext(), R.drawable.ic_baseline_restore_from_trash_48, color)
     }
 
     /**

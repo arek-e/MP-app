@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
 import androidx.core.content.ContextCompat
@@ -118,7 +119,7 @@ class MainActivity :
         bindingCardListStub.trashRecyclerView.adapter = trashCardAdapter
         bindingCardListStub.trashRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
 
-        //trashCardAdapter.setListener(this@MainActivity)
+        trashCardAdapter.setListener(this@MainActivity)
 
     }
 
@@ -259,8 +260,48 @@ class MainActivity :
 
     // Method is called when the listener is triggered from the recycle view item
     override fun onItemClicked(place: Place, position: Int) {
+
+        mapFragment.moveMapToMaker(place.latLng)
         // Run code when optional item inside the card is clicked
+        Log.d("ITM", "$place")
+        if(currentMode != ContributionMode.EXIT.value){
+            return
+        }
+
+
+        currentMode = ContributionMode.CANCEL.value
+        Log.d("ITM", "$currentMode")
+
+        cardBinListView.visibility = View.GONE
+        cardBinEditView.visibility = View.VISIBLE
+        contributionConfirmView.visibility = View.VISIBLE
+        contributionExitView.visibility = View.GONE
+
+        bindingCardEditStub.locationTextView.text = place.address
+        bindingCardEditStub.switch7.isChecked = place.isMissing
+        bindingCardEditStub.switchFull.isChecked = place.isFull
+        bindingCardEditStub.switchDamaged.isChecked = place.isDamaged
+
+        setIcons(bindingCardEditStub.iconOrganic, place.wastetypes.organic)
+        setIcons(bindingCardEditStub.iconGlass, place.wastetypes.glass)
+        setIcons(bindingCardEditStub.iconMetal, place.wastetypes.metal)
+        setIcons(bindingCardEditStub.iconPaper, place.wastetypes.paper)
+        setIcons(bindingCardEditStub.iconLiquid, place.wastetypes.liquid)
+        setIcons(bindingCardEditStub.iconPlastic, place.wastetypes.plastic)
+
+
+
     }
+    private fun setIcons(imageView: ImageView, toggled: Boolean){
+        Log.d("ITM","$imageView $toggled")
+        if (!toggled){
+            imageView.setColorFilter(ContextCompat.getColor(this, android.R.color.transparent), android.graphics.PorterDuff.Mode.SRC_ATOP);
+        }else{
+            imageView.setColorFilter(ContextCompat.getColor(this, R.color.disabled), android.graphics.PorterDuff.Mode.SRC_ATOP);
+        }
+    }
+
+
 
     override fun checkContributionMode(): Boolean {
         if(currentMode == ContributionMode.EXIT.value || currentMode == ContributionMode.CANCEL.value){

@@ -64,7 +64,7 @@
         <LinearLayout
             android:id="@+id/center_card"
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="215dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@id/bottomFrame"
             app:layout_constraintEnd_toEndOf="parent"

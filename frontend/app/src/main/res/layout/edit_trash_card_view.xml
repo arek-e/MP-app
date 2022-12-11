@@ -3,51 +3,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/info_TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="Most closeby"
-        android:textColor="@color/primary"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/status_TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/location_TextView" />
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/location_TextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="78-1 HAGYE-DONG"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/info_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Most closeby"
+        android:textColor="@color/primary"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location_TextView" />
 
     <TextView
         android:id="@+id/status_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="20dp"
         android:text="Just emptied"
         android:textColor="@color/primary"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/loc_imageView"
+        app:layout_constraintTop_toTopOf="@+id/info_TextView" />
 
     <TextView
         android:id="@+id/distance_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginBottom="5dp"
         android:text="0.3 KM"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@+id/loc_imageView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/status_TextView"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -55,21 +54,15 @@
         android:id="@+id/loc_imageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="20dp"
         android:src="@drawable/distance"
-        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toStartOf="@+id/distance_TextView"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toEndOf="@+id/status_TextView"
-        app:layout_constraintTop_toTopOf="@+id/status_TextView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/distance_TextView" />
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginBottom="20dp"
         android:background="@color/primary"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2" />
 
@@ -83,11 +76,14 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_gravity="center|center_vertical"
+            android:layout_weight="1"
+            android:gravity="center">
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:paddingVertical="5dp">
 
                 <ImageView
@@ -95,6 +91,8 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
+                    android:tint="@color/disabled"
+                    android:tintMode="src_atop"
                     app:srcCompat="@drawable/glass_recycling" />
 
                 <ImageView
@@ -102,6 +100,8 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
+                    android:tint="@color/disabled"
+                    android:tintMode="src_atop"
                     app:srcCompat="@drawable/water" />
 
                 <ImageView
@@ -109,6 +109,8 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
+                    android:tint="@color/disabled"
+                    android:tintMode="src_atop"
                     app:srcCompat="@drawable/resource_package" />
             </TableRow>
 
@@ -122,6 +124,8 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
+                    android:tint="@color/disabled"
+                    android:tintMode="src_atop"
                     app:srcCompat="@drawable/apple" />
 
                 <ImageView
@@ -129,6 +133,8 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
+                    android:tint="@color/disabled"
+                    android:tintMode="src_atop"
                     app:srcCompat="@drawable/bottle" />
 
                 <ImageView
@@ -136,6 +142,8 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
+                    android:tint="@color/disabled"
+                    android:tintMode="src_atop"
                     app:srcCompat="@drawable/can" />
             </TableRow>
 

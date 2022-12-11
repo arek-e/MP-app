@@ -37,7 +37,7 @@ class PlaceRenderer(private val context: Context, map: GoogleMap, clusterManager
         )
         BitmapHelper.vectorToBitmap(
             context,
-            R.drawable.ic_baseline_restore_from_trash_24,
+            R.drawable.ic_baseline_restore_from_trash_48,
             color
         )
     }
