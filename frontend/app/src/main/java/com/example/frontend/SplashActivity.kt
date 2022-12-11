@@ -7,6 +7,8 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.frontend.onBoarding.OnBoardingActivity
+import com.example.frontend.onBoarding.OnboardingFragment
 
 @SuppressLint("CustomSplashScreen")
 @Suppress("DEPRECATION")
@@ -22,7 +24,7 @@ class SplashActivity : AppCompatActivity() {
         )
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, OnBoardingActivity::class.java)
             startActivity(intent)
             finish()
         }, 1500)
