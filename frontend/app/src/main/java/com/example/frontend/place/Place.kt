@@ -30,6 +30,8 @@ data class Wastetypes(
     val organic: Boolean,
     val metal: Boolean,
     val glass: Boolean,
-    val liquid: Boolean
+    val liquid: Boolean,
+    val paper: Boolean,
+    val plastic: Boolean
 
 )

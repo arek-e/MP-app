@@ -4,18 +4,19 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.frontend.databinding.TrashCardViewBinding
+import com.example.frontend.databinding.TrashCardItemViewBinding
 import com.example.frontend.place.Place
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.constraintlayout.utils.widget.ImageFilterView
+import androidx.core.view.ViewCompat.setAlpha
 import com.example.frontend.place.Wastetypes
 
 class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Adapter<TrashCardAdapter.ViewHolder>() {
     private lateinit var listener: ItemListener
 
     // Provides reference to our type of views, aka our components inside the bingo card view
-    class ViewHolder(binding: TrashCardViewBinding): RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(binding: TrashCardItemViewBinding): RecyclerView.ViewHolder(binding.root) {
         val tv_location: TextView = binding.locationTextView
         val tv_distance: TextView = binding.distanceTextView
         val tv_info: TextView = binding.infoTextView
@@ -23,12 +24,14 @@ class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Ad
         val ifw_organic: ImageFilterView = binding.imageFilterViewOrganic
         val ifw_metal: ImageFilterView = binding.imageFilterViewMetal
         val ifw_liquid: ImageFilterView = binding.imageFilterViewLiquid
+        val ifw_glass: ImageFilterView = binding.imageFilterViewGlass
+        val ifw_paper: ImageFilterView = binding.imageFilterViewPaper
         val ifw_plastic: ImageFilterView = binding.imageFilterViewPlastic
     }
 
     // Creates the new recycleview item
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = TrashCardViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = TrashCardItemViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -37,26 +40,27 @@ class TrashCardAdapter(private val binPlaces: ArrayList<Place>): RecyclerView.Ad
         val trashBinPlace = binPlaces[position]
         holder.tv_location.text = trashBinPlace.address
         if (trashBinPlace.wastetypes.liquid){
-            holder.ifw_liquid.imageTintList = ColorStateList.valueOf(Color.RED)
-        }else{
-            holder.ifw_liquid.imageTintList = ColorStateList.valueOf(Color.BLUE)
+            holder.ifw_liquid.setAlpha(80)
         }
 
         if (trashBinPlace.wastetypes.metal){
-            holder.ifw_metal.imageTintList = ColorStateList.valueOf(Color.RED)
-        }else{
-            holder.ifw_metal.imageTintList = ColorStateList.valueOf(Color.BLUE)
+            holder.ifw_metal.setAlpha(80)
         }
+
         if (trashBinPlace.wastetypes.organic){
-            holder.ifw_organic.imageTintList = ColorStateList.valueOf(Color.RED)
-        }else{
-            holder.ifw_organic.imageTintList = ColorStateList.valueOf(Color.BLUE)
+            holder.ifw_organic.setAlpha(80)
         }
 
         if (trashBinPlace.wastetypes.glass){
-            holder.ifw_plastic.imageTintList = ColorStateList.valueOf(Color.RED)
-        }else{
-            holder.ifw_plastic.imageTintList = ColorStateList.valueOf(Color.BLUE)
+            holder.ifw_glass.setAlpha(80)
+        }
+
+        if (trashBinPlace.wastetypes.paper){
+            holder.ifw_paper.setAlpha(80)
+        }
+
+        if (trashBinPlace.wastetypes.plastic){
+            holder.ifw_plastic.setAlpha(80)
         }
 
 
